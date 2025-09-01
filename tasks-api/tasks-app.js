@@ -28,7 +28,7 @@ const extractAndVerifyToken = async (headers) => {
   return response.data.uid;
 };
 
-app.get('/tasks', async (req, res) => {
+app.get('/api/tasks', async (req, res) => {
   try {
     const uid = await extractAndVerifyToken(req.headers); // we don't really need the uid
     fs.readFile(filePath, (err, data) => {
