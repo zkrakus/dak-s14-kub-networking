@@ -1,0 +1,17 @@
+apiVersion: app/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      name: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: zkrakus/kub-demo-frontend:latest
